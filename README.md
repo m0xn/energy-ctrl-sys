@@ -1,2 +1,11 @@
-# elec-consumption-sys
-En este repositorio encontrarás toda la documentación y el código neceseario para comprender el funcionamiento de un simple sistema de consumo eléctrico
+# Sistema para medir el consumo eléctrico
+
+Este repositorio incluye toda la documentación y código necesario para construir
+un sistema de consumo eléctrico básico.
+
+
+## Componentes necesarios
+
+| Nombre | Imagen |
+| ------ | ------ |
+| BME280 | ![[./assets/bme280.jpg]] | 
