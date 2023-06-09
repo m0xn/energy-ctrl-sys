@@ -8,4 +8,4 @@ un sistema de consumo eléctrico básico.
 
 | Nombre | Imagen |
 | ------ | ------ |
-| BME280 | ![[./assets/bme280.jpg]] | 
+| BME280 | ![](./assets/bme280.jpg) | 
