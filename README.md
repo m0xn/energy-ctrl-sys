@@ -1,8 +1,10 @@
-# Sistema para medir el consumo eléctrico
+# Sistema de monitorización de consumo eléctrico 
 
-Este repositorio incluye toda la documentación y código necesario para construir
-un sistema de consumo eléctrico básico.
+En este repositorio podrás encontrar todos los recursos necesarios para montar un sistema básico de monitorización de consumo eléctrico.
 
+## Tabla de contenidos
+
+- [Componentes necesarios](#componentes-necesarios)
 
 ## Componentes necesarios
 
