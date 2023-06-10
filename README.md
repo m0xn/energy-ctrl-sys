@@ -1,11 +1,18 @@
-# Sistema de monitorización de consumo eléctrico 
-
-En este repositorio podrás encontrar todos los **recursos** necesarios para montar un *sistema básico de monitorización de consumo eléctrico*.
+# Sistema de gestión de energía
 
 ## Tabla de contenidos
 
+- [Introducción]()
+- [Función]()
 - [Componentes](#componentes)
-- [Librerías](#librerias)
+- [Montaje]()
+- [Scripts]()
+- [Sistema de control]()
+
+## Introducción
+
+Este repositorio recoge todos los recursos e instrucciones necesarios para montar un sistema básico de gestión de energía.
+En este caso, el sistema medirá a través de uno de los sensores (SCT-013) el consumo energético de los dispostivos eléctricos conectados a una regleta. De forma que el sistema es más cerrado, por eso es una base de los sistemas de gestión energética más complejos. 
 
 ## Componentes 
 
@@ -23,5 +30,4 @@ Para poder establecer una comunicación a mayor nivel con ciertos componentes de
 - BME280 ~> `imges/bme280.py`
 - SCT-013 ~> *falta por implementar*
 - OLED -> `images/ssd1306.py`
-
 
