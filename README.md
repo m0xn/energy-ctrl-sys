@@ -4,7 +4,7 @@
 
 - [Introducción](#introducción)
 - [Componentes](#componentes)
-- [Montaje]()
+- [Montaje](#montaje)
 - [Scripts]()
 
 ## Introducción
