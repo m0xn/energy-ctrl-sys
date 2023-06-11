@@ -6,7 +6,6 @@
 - [Componentes](#componentes)
 - [Montaje]()
 - [Scripts]()
-- [Sistema de control]()
 
 ## Introducción
 
@@ -29,3 +28,8 @@ Los valores con los que estaremos trabajando se mostrarán en la pantalla OLED, 
 | Cables | <img src="/images/cables.jpg" width="200"> | Ventiladores (x2) | <img src="/images/fans.jpg" width="200"> |  
 | Relé doble | <img src="/images/doubleRelay.jpg" width="200"> | panel OLED | <img src="/images/oledPanel.jpeg" width="200">
 
+## Montaje
+
+Aquí está una referencia de cómo debería quedar el circuito básico (*Falta implementar el sensor SCT-013):
+
+![](/images/baseCircuit.jpg)
