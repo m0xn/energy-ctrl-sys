@@ -11,7 +11,14 @@
 ## Introducción
 
 Este repositorio recoge todos los recursos e instrucciones necesarios para montar un sistema básico de gestión de energía.
-En este caso, el sistema medirá a través de uno de los sensores (SCT-013) el consumo energético de los dispostivos eléctricos conectados a una regleta. De forma que el sistema es más cerrado, por eso es una base de los sistemas de gestión energética más complejos. 
+
+El sistema funciona de la siguiente forma:
+    
+- El sensor `SCT-013` se encarga de tomar los vatios consumidos por los dispositivos eléctricos enchufados a una regleta.
+- Dichos dispositivos nos servirán como una fuente manual de calor con la que estaremos trabajando.
+- Si la temperatura de la habitación donde nos encontremos supera un umbral superior de temperatura`MAX_TEMP`, los ventiladores se activarán.
+
+Los valores con los que estaremos trabajando se mostrarán en la pantalla OLED, de esa forma monitorizando los valores obtenidos en un dispositivo fijo.
 
 ## Componentes 
 
