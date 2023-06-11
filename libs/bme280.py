@@ -246,9 +246,8 @@ class BME280:
 
     @property
     def values(self):
-        """ human readable values """ # Modified to fit the final control system
+        """ human readable values """ # Modified it to return a tuple[int] instead of a tuple[str]
 
         t, p, h = self.read_compensated_data()
 
-        return ("{:.2f}".format(t), "{:.2f}".format(p/100),
-                "{:.2f}".format(h))
+        return (round(t, 2), round(p/100, 2), round(h, 2))
