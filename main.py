@@ -7,7 +7,7 @@ bme280 = BME280(i2c=i2cbus)
 oled = SSD1306_I2C(128, 64, i2cbus)
 # sct013 = ...
 
-fans_output = Pin(2, Pin.OUT)
+fans_output = Pin(12, Pin.OUT)
 
 # Constants
 
