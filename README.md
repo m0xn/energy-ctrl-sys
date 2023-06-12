@@ -100,6 +100,7 @@ Después de los parámetros utilizaremos el método `put` para escribir un archi
 Por ejemplo, si fuéramos a escribir el archivo `bme280.py` dentro de la placa, pondríamos algo así:
 
 (*Asumiendo que el archivo se encuentra en el directorio en el que estamos situados en terminal*)
+
 **WINDOWS**:
 ```shell
 ampy -p COM(N) -b 115200 put bme280.py 
