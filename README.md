@@ -32,7 +32,7 @@ Los valores con los que estaremos trabajando se mostrarán en la pantalla OLED, 
 
 ## Montaje
 
-Aquí está una referencia de cómo debería quedar el circuito básico:
+Aquí está una referencia de cómo debería quedar el **circuito básico**:
 
 ![](/images/baseCircuit.jpg)
 
@@ -52,6 +52,18 @@ Esto puede hacerse de dos formas:
 
 Esta es la forma más fácil de escribir un copia del archivo dentro de la placa.
 
+(*Asegúrate de conectar la placa en este proceso*)
 - Primero, deberás tener abierto el archivo que quieres guardar dentro de la placa abierto en el editor. Pongamos como ejemplo el archivo `main.py` del repositorio:
 
-<img src='/images/thonny/screenshot1.png' width="700">
+<img src='/images/thonny/screenshot1.png' width="900">
+
+- Después, puedes dirigirte a `Fichero > Guardar` o `Fichero > Guardar como` (Si el archivo ya existe en el sistema). También puedes utilizar los atajos de teclado respectivos: `Ctrl+S`, 'Guardar'; `Ctrl+Shift+S`, 'Guardar como'.
+Si es la primera vez que estas escribiendo el archivo en tu sistema, o si le das a 'Guardar como', te aparecerá la siguiente ventana emergente:
+
+<img src='/images/thonny/screenshot2.png' width="900">
+
+- En vez de guardarlo en tu equipo, lo guardarás en tu placa ESP32 haciendo click en el botón con el texto '**Dispositivo MicroPython**'.
+
+<img src='/images/thonny/screenshot3.png' width="900">
+
+- Para finalizar, escribes el nombre con el que quieras guardar el archivo y una vez le des a **Ok** tendrás el archivo escrito dentro de la memoria de la placa. 
