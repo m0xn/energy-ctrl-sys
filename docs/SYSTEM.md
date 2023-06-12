@@ -50,8 +50,38 @@ Esto podemos hacerlo sacando dos cables a cualquier parte de la *protoboard* y c
 
 Una vez hemos declarado el bus I2C, podemos definir las variables `bme280` y `oled` que guardan instancias de su clase correspondiente. 
 
-Simplemente a la instancia de `BME280` le pasamos al argumento 'i2c' la referencia al bus I2C que hemos declarado antes. (Más información sobre la librería ~> https://github.com/robert-hh/BME280)
+Simplemente a la instancia de `BME280` le pasamos al argumento 'i2c' la referencia al bus I2C que hemos declarado antes. (Más información sobre la librería ~> https://github.com/robert-hh/BME280).
 
-Y a la instancia de SSD1306_I2C (clase que nos facilita la comunicación con la pantalla OLED), le pasamos unos parámetros para la altura y anchura de la pantalla (en el caso de nuestra OLED 128x64) y también le pasamos una referencia del bus I2C de antes, al igual que en la instancia del BME280. (Más información sobre la OLED ~> https://docs.micropython.org/en/latest/esp8266/tutorial/ssd1306.html)
+Y a la instancia de SSD1306_I2C (clase que nos facilita la comunicación con la pantalla OLED), le pasamos unos parámetros para la altura y anchura de la pantalla (en el caso de nuestra OLED 128x64) y también le pasamos una referencia del bus I2C de antes, al igual que en la instancia del BME280. (Más información sobre la OLED ~> https://docs.micropython.org/en/latest/esp8266/tutorial/ssd1306.html).
 
 Después declaramos una varible que guardará una referencia para el pin que controle la entrada para el relé donde conectemos los ventiladores dentro del módulo de doble relé.
+
+
+3. Definiendo algunas constantes
+
+Esta sección del código está creada para definir valores inmutables a lo largo del proceso de ejecución. Esto quiere decir que estamos definiendo valores fijos que nos servirán en el código para hacer más claras algunas de sus partes.
+
+`TEMP_IDX`, `PRES_IDX`, `HUM_IDX`; son constantes que identifican el índice de los valores que obtenemos de la tupla que devuelve la librería del sensor BME280. Declarando estas constantes podemos ver mejor de dónde vienen estos valores.
+
+`MIN_TEMP`, `MAX_TEMP`; son valores de temperatura que utilizaremos a la hora de comprar la temperatura de la habitación en la que nos encontremos y accionar o no los ventiladores.
+
+
+4. Definiendo las funciones que integra el *listener* o bucle de escucha:
+
+```python
+def update_oled():
+    # oled.text(f'POWER: {sct013.values[0]}W', 0, 0)
+    oled.text(f'TEMP: {bme280.values[TEMP_IDX]}C', 0, 17)
+    oled.text(f'PRES: {bme280.values[PRES_IDX]}hPa', 0, 33)
+    oled.text(f'HUM: {bme280.values[HUM_IDX]}%', 0, 49)
+
+    oled.show()
+    oled.fill(0)
+
+update_fans = lambda: fans_output.value(not bme280.values[TEMP_IDX] > MAX_TEMP) # Relay actives on low, therefore, the condition is inverted with 'not'
+```
+
+Aquí tenemos dos funciones que se ejecutarán periódicamente en la función `listener` que estamos utilizando como *callback* para nuestro Timer.
+
+La primera función `update_oled()` toma los valores del sensor BME280, utilizando la propiedad `values`, que nos devuelve una tupla de enteros, y las muestra en distintas secciones de la pantalla OLED.
+*Fix the position of each row of info by increasing the value by 9 not by 19* 
