@@ -4,7 +4,7 @@ from ssd1306 import SSD1306_I2C
 
 i2cbus = SoftI2C(scl=Pin(22), sda=Pin(21))
 bme280 = BME280(i2c=i2cbus)
-oled = SSD1306_I2C(128, 64, i2cbus)
+oled = SSD1306_I2C(width=128, height=64, i2c=i2cbus)
 # sct013 = ...
 
 fans_output = Pin(12, Pin.OUT)
