@@ -48,11 +48,12 @@ Para poder utilizarlas deberás instalarlas en tu placa ESP32.
 
 Esto puede hacerse de dos formas:
 
-1. Utilizando Thonny:
+1. **Utilizando Thonny**:
 
 Esta es la forma más fácil de escribir un copia del archivo dentro de la placa.
 
-(*Asegúrate de conectar la placa en este proceso*)
+(*Asegúrate de tener la placa conectada para seguir el proceso*)
+
 - Primero, deberás tener abierto el archivo que quieres guardar dentro de la placa abierto en el editor. Pongamos como ejemplo el archivo `main.py` del repositorio:
 
 <img src='/images/thonny/screenshot1.png' width="900">
@@ -67,3 +68,47 @@ Si es la primera vez que estas escribiendo el archivo en tu sistema, o si le das
 <img src='/images/thonny/screenshot3.png' width="900">
 
 - Para finalizar, escribes el nombre con el que quieras guardar el archivo y una vez le des a **Ok** tendrás el archivo escrito dentro de la memoria de la placa. 
+
+2. **Utilizando una librería de python (ampy)**
+
+Esta es otra alternativa para instalar scripts dentro de la placa a través de una librería de Python que es una aplicación de terminal que podemos ejecutar externamente. 
+
+- Lo primero de todo es instalar la librería llamada '*ampy*' o como la podréis encontrar en PiPy '*adafruit-ampy*'. Aquí tenéis un enlace a la entrada de PiPy con la librería ~> https://pypi.org/project/adafruit-ampy/
+Para instalar la librería tendréis que ejecutar el siguiente comando en la terminal:
+
+```bash
+pip install adafruit-ampy
+```
+
+- Una vez se haya instalado la librería, podremos llamar a la aplicación de consola *ampy* utilizando el comando `ampy`.
+
+```bash
+ampy
+```
+
+- Ejecutando este comando nos proporcionará una pequeña guía de ayuda para utilizar la librería.
+
+- En nuestro caso, como nos intersa escribir archivos dentro de la placa, tenemos que especificar los siguientes parámetros:
+
+    - `-p`: hace referencia al puerto serial por el que nos comunicamos con la ESP32. En el caso de Windows es `COM(N)` siendo N: 1,2,3,4... (*Podéis mirarlo en Thonny en la esquina inferior derecha). En el caso de Linux, el puerto serial es un directorio dentro de `dev` llamado ttyUSB0 (`/dev/ttyUSB0`). 
+    - `-b`: hace referencia a la tasa de *baud*. Este valor en la ESP32 es de **115200**.
+
+(*El resto de parámetros no son tan relevantes*)
+
+Después de los parámetros utilizaremos el método `put` para escribir un archivo dentro de la placa.
+
+Por ejemplo, si fuéramos a escribir el archivo `bme280.py` dentro de la placa, pondríamos algo así:
+
+(*Asumiendo que el archivo se encuentra en el directorio en el que estamos situados en terminal*)
+**WINDOWS**:
+```powershell
+ampy -p COM(N) -b 115200 put bme280.py 
+```
+
+**LINUX**:
+```bash
+ampy -p /dev/ttyUSB0 -b 115200 put bme280.py 
+```
+
+Tras unos segundos el archivo ya estará instalado en el dispositivo.
+Hay que tener muy en cuenta que en este proceso NO puede haber una instancia de Thonny abierta. Esto es debido a que hay un conflicto al mandar datos a la placa porque el puerto serial que la conecta con nuestro equipo ya está ocupado por la instancia de Thonny. 
