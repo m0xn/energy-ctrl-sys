@@ -8,6 +8,7 @@
 - [Componentes](#componentes)
 - [Montaje](#montaje)
 - [Scripts](#scripts)
+- [Sistema de control](#sistema-de-control)
 
 ## Introducción
 
@@ -113,3 +114,7 @@ ampy -p /dev/ttyUSB0 -b 115200 put bme280.py
 
 Tras unos segundos el archivo ya estará instalado en el dispositivo.
 Hay que tener muy en cuenta que en este proceso NO puede haber una instancia de Thonny abierta. Esto es debido a que hay un conflicto al mandar datos a la placa porque el puerto serial que la conecta con nuestro equipo ya está ocupado por la instancia de Thonny. 
+
+## Sistema de control
+
+Puedes ver cómo funciona el sistema de control programdo en el archivo `main.py` en ~> [Sistema de control](SYSTEM.md)
