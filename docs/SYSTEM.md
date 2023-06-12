@@ -49,7 +49,7 @@ No entraré mucho en detalle, pero dado que tanto la pantalla OLED como el senso
 Esto podemos hacerlo sacando dos cables a cualquier parte de la *protoboard* y conectando dos paresde ellos en serie.
 
 Una vez hemos declarado el bus I2C, podemos definir las variables `bme280` y `oled` que guardan instancias de su clase correspondiente. 
-Simplemente a la instancia de `BME280` le pasamos al argumento 'i2c' la referencia al bus I2C que hemos declarado antes.
-Y a la instancia de SSD1306_I2C (clase que nos facilita la comunicación con la pantalla OLED), le pasamos unos parámetros para la altura y anchura de la pantalla (en el caso de nuestra OLED 128x64) y también le pasamos una referencia del bus I2C de antes, al igual que en la instancia del BME280.
+Simplemente a la instancia de `BME280` le pasamos al argumento 'i2c' la referencia al bus I2C que hemos declarado antes. (Más información sobre la librería ~> https://github.com/robert-hh/BME280)
+Y a la instancia de SSD1306_I2C (clase que nos facilita la comunicación con la pantalla OLED), le pasamos unos parámetros para la altura y anchura de la pantalla (en el caso de nuestra OLED 128x64) y también le pasamos una referencia del bus I2C de antes, al igual que en la instancia del BME280. (Más información sobre la OLED ~> https://docs.micropython.org/en/latest/esp8266/tutorial/ssd1306.html)
 
 Después declaramos una varible que guardará una referencia para el pin que controle la entrada para el relé donde conectemos los ventiladores dentro del módulo de doble relé.
