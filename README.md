@@ -76,13 +76,13 @@ Esta es otra alternativa para instalar scripts dentro de la placa a través de u
 - Lo primero de todo es instalar la librería llamada '*ampy*' o como la podréis encontrar en PiPy '*adafruit-ampy*'. Aquí tenéis un enlace a la entrada de PiPy con la librería ~> https://pypi.org/project/adafruit-ampy/
 Para instalar la librería tendréis que ejecutar el siguiente comando en la terminal:
 
-```bash
+```shell
 pip install adafruit-ampy
 ```
 
 - Una vez se haya instalado la librería, podremos llamar a la aplicación de consola *ampy* utilizando el comando `ampy`.
 
-```bash
+```shell
 ampy
 ```
 
@@ -101,12 +101,12 @@ Por ejemplo, si fuéramos a escribir el archivo `bme280.py` dentro de la placa, 
 
 (*Asumiendo que el archivo se encuentra en el directorio en el que estamos situados en terminal*)
 **WINDOWS**:
-```powershell
+```shell
 ampy -p COM(N) -b 115200 put bme280.py 
 ```
 
 **LINUX**:
-```bash
+```shell
 ampy -p /dev/ttyUSB0 -b 115200 put bme280.py 
 ```
 
