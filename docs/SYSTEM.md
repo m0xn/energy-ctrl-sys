@@ -84,7 +84,7 @@ def update_oled():
 update_fans = lambda: fans_output.value(not bme280.values[TEMP_IDX] > MAX_TEMP) # Relay actives on low, therefore, the condition is inverted with 'not'
 ```
 
-Aquí tenemos dos funciones que se ejecutarán periódicamente en la función `listener` que estamos utilizando como *callback* para nuestro Timer.
+Aquí tenemos dos funciones que se ejecutarán periódicamente en la función `listener` que estamos utilizando como *callback* para nuestro `Timer`.
 
 La primera función `update_oled()` toma los valores del sensor BME280, utilizando la propiedad `values`, que nos devuelve una tupla de enteros (*tuple[int]*), y las muestra en distintas secciones de la pantalla OLED.
 Además, puesto que tenemos espacio suficiente podemos mostrar los valores de temperatura máxima y mínimas que hemos definido antes en las [constantes](#definiendo-algunas-constantes). 
@@ -117,3 +117,29 @@ Para que los valores de la pantalla OLED no se superpongan, estamos refrescando 
 
 Y la segunda función por su sencillez está definida en una sóla línea. Las funciones que definimos en línea son las denominadas funciones *lambda*, de ahí la palabra clave que se utiliza para definirlas. Por lo general toman uno o más paramétros, puesto que este tipo de funciones está pensada para devolver lo que se especifique en la expresión que incluyamos en la función. En este caso, como no estamos devolviendo la función, si fuéramos a mostrar en consola el resultado sería `None`.
 (Más información sobre las funciones lambda ~> https://docs.python.org/3/reference/expressions.html#lambdas)
+
+*Al definir las funciones por separado hacemos el código un poco más legible para un tercero.*
+
+5. Declarando el *listener* o bucle de escucha.
+
+```python
+def listener(t):
+    update_oled()
+    update_fans()
+
+listener_handler = Timer(0)
+listener_handler.init(period=500, callback=listener)
+```
+
+Ahora que tenemos las funciones que va a integrar nuestro bucle de escucha, podemos llamarlas dentro del *callback* que ejecuta el `Timer`. Una función *callback* es aquella que se pasa como paramétro para una función o clase para ser posteriormente ejecutada.  
+
+En este caso, la función que va a ejecutar el `Timer` se llama `listener()` y acepta un como parámetro una referencia de la clase `Timer` (*Esto puede ser útil para detener un proceso definido como periódico, tras un número concreto de iteraciones*).
+
+Una vez tenemos la función, definimos el `Timer` encargado de ejecutar dicho proceso cada cierto tiempo de forma periódica. En este caso, tiene el nombre de `listener_handler`.
+Para poder definir una instancia de la clase `Timer`, primero debemos asignarle un número de identificación o ID (En el caso de la placa ESP32 contamos con 4 timers cuyos IDs van del 0 al 3).
+Después, utilizando la función `init()` de la clase `Timer`, modficaremos las características del Timer a nuestras necesidades.
+
+Para el tipo de bucle que queremos construir, dado que el Timer ejecuta la función *callback* de forma periódica por defecto, sólamente tendremos que especificar cada cuanto queremos que se ejecute nuestro *callback*. Esto lo hacemos pasándole en esta ocasión el número `500` al argumento `period`. La unidad de medida del periodo está en `ms`.
+Por último, le pasamos al argumento `callback` el nombre de nuestra función `listener()`.
+
+Ese es el funcionamiento básico del sistema.
