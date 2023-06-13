@@ -91,7 +91,7 @@ Además, puesto que tenemos espacio suficiente podemos mostrar los valores de te
 Para que los valores de la pantalla OLED no se superpongan, estamos refrescando la pantalla por cada ciclo del bucle de escucha rellenando la pantalla completamente de color negro tras mostrar los valores que le estamos escribiendo.
 
 > **Note:** El valor de retorno de la propiedad values de la librearía BME280 está modificado para adaptarse al proyecto.
-
+>
 > - Original:
 > ```python
 >    @property
@@ -103,7 +103,7 @@ Para que los valores de la pantalla OLED no se superpongan, estamos refrescando 
 >        return ("{:.2f}C".format(t), "{:.2f}hPa".format(p/100), 
 >                "{:.2f}%".format(h))
 >```
-
+>
 >- Modificado:
 >```python
 >    @property
