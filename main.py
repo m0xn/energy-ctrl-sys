@@ -19,9 +19,12 @@ MAX_TEMP = 28
 
 def update_oled():
     # oled.text(f'POWER: {sct013.values[0]}W', 0, 0)
-    oled.text(f'TEMP: {bme280.values[TEMP_IDX]}C', 0, 17)
-    oled.text(f'PRES: {bme280.values[PRES_IDX]}hPa', 0, 33)
-    oled.text(f'HUM: {bme280.values[HUM_IDX]}%', 0, 49)
+    oled.text(f'TEMP: {bme280.values[TEMP_IDX]}C', 0, 9)
+    oled.text(f'MIN: {MIN_TEMP}C', 0, 18)
+    oled.text(f'MAX: {MAX_TEMP}C', 0, 27)
+
+    oled.text(f'PRES: {bme280.values[PRES_IDX]}hPa', 0, 36)
+    oled.text(f'HUM: {bme280.values[HUM_IDX]}%', 0, 45)
 
     oled.show()
     oled.fill(0)
