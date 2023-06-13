@@ -87,7 +87,7 @@ update_fans = lambda: fans_output.value(not bme280.values[TEMP_IDX] > MAX_TEMP) 
 Aquí tenemos dos funciones que se ejecutarán periódicamente en la función `listener` que estamos utilizando como *callback* para nuestro `Timer`.
 
 La primera función `update_oled()` toma los valores del sensor BME280, utilizando la propiedad `values`, que nos devuelve una tupla de enteros (*tuple[int]*), y las muestra en distintas secciones de la pantalla OLED.
-Además, puesto que tenemos espacio suficiente podemos mostrar los valores de temperatura máxima y mínimas que hemos definido antes en las [constantes](#definiendo-algunas-constantes). 
+Además, puesto que tenemos espacio suficiente podemos mostrar los valores de temperatura máxima y mínimas que hemos definido antes en las [constantes](#3-.-definiendo-algunas-constantes). 
 Para que los valores de la pantalla OLED no se superpongan, estamos refrescando la pantalla por cada ciclo del bucle de escucha rellenando la pantalla completamente de color negro tras mostrar los valores que le estamos escribiendo.
 
 > **Note:** El valor de retorno de la propiedad values de la librearía BME280 está modificado para adaptarse al proyecto.
