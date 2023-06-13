@@ -17,7 +17,7 @@ También, al condensar el proceso en un sólo sistema periódico estamos gastand
 
 Vamos a echar un vistazo al código del archivo `main.py`, explicando por bloques de código lo que se va haciendo y con qué intención se realiza.
 
-1. Importando las librerías
+#### 1. Importando las librerías
 
 ```python
 from machine import Pin, Timer, SoftI2C
@@ -34,7 +34,7 @@ En este caso:
 - Importamos la clase `SoftI2C` para poder comunicarnos con el sensor BME280 y la panel OLED. Utilizamos esta clase puesto que su clase predecesora, `I2C` ya está obsoleta en esta librería.
 
 
-2. Definiendo las instancias de los módulos
+#### 2. Definiendo las instancias de los módulos
 
 ```python
 i2cbus = SoftI2C(scl=Pin(22), sda=Pin(21))
@@ -57,7 +57,7 @@ Y a la instancia de SSD1306_I2C (clase que nos facilita la comunicación con la 
 Después declaramos una varible que guardará una referencia para el pin que controle la entrada para el relé donde conectemos los ventiladores dentro del módulo de doble relé.
 
 
-3. Definiendo algunas constantes
+#### 3. Definiendo algunas constantes
 
 Esta sección del código está creada para definir valores inmutables a lo largo del proceso de ejecución. Esto quiere decir que estamos definiendo valores fijos que nos servirán en el código para hacer más claras algunas de sus partes.
 
@@ -66,7 +66,7 @@ Esta sección del código está creada para definir valores inmutables a lo larg
 `MIN_TEMP`, `MAX_TEMP`; son valores de temperatura que utilizaremos a la hora de comprar la temperatura de la habitación en la que nos encontremos y accionar o no los ventiladores.
 
 
-4. Definiendo las funciones que integra el *listener* o bucle de escucha:
+#### 4. Definiendo las funciones que integra el *listener* o bucle de escucha:
 
 ```python
 def update_oled():
@@ -120,7 +120,7 @@ Y la segunda función por su sencillez está definida en una sóla línea. Las f
 
 *Al definir las funciones por separado hacemos el código un poco más legible para un tercero.*
 
-5. Declarando el *listener* o bucle de escucha.
+#### 5. Declarando el *listener* o bucle de escucha.
 
 ```python
 def listener(t):
