@@ -90,34 +90,30 @@ La primera función `update_oled()` toma los valores del sensor BME280, utilizan
 Además, puesto que tenemos espacio suficiente podemos mostrar los valores de temperatura máxima y mínimas que hemos definido antes en las [constantes](#definiendo-algunas-constantes). 
 Para que los valores de la pantalla OLED no se superpongan, estamos refrescando la pantalla por cada ciclo del bucle de escucha rellenando la pantalla completamente de color negro tras mostrar los valores que le estamos escribiendo.
 
-{% note %}
+> **Note:** El valor de retorno de la propiedad values de la librearía BME280 está modificado para adaptarse al proyecto.
 
-**Note:** El valor de retorno de la propiedad values de la librearía BME280 está modificado para adaptarse al proyecto.
+> - Original:
+> ```python
+>    @property
+>    def values(self):
+>        """ human readable values """ 
+>
+>        t, p, h = self.read_compensated_data()
+>
+>        return ("{:.2f}C".format(t), "{:.2f}hPa".format(p/100), 
+>                "{:.2f}%".format(h))
+>```
 
-- Original:
-```python
-    @property
-    def values(self):
-        """ human readable values """ 
-
-        t, p, h = self.read_compensated_data()
-
-        return ("{:.2f}C".format(t), "{:.2f}hPa".format(p/100), 
-                "{:.2f}%".format(h))
-```
-
-- Modificado:
-```python
-    @property
-    def values(self):
-        """ human readable values """ # Modified it to return a tuple[int] instead of a tuple[str]
-
-        t, p, h = self.read_compensated_data()
-
-        return (round(t, 2), round(p/100, 2), round(h, 2))
-```
-
-{% endnote %}
+>- Modificado:
+>```python
+>    @property
+>    def values(self):
+>        """ human readable values """ # Modified it to return a tuple[int] instead of a tuple[str]
+>
+>        t, p, h = self.read_compensated_data()
+>
+>        return (round(t, 2), round(p/100, 2), round(h, 2))
+>```
 
 Y la segunda función por su sencillez está definida en una sóla línea. Las funciones que definimos en línea son las denominadas funciones *lambda*, de ahí la palabra clave que se utiliza para definirlas. Por lo general toman uno o más paramétros, puesto que este tipo de funciones está pensada para devolver lo que se especifique en la expresión que incluyamos en la función. En este caso, como no estamos devolviendo la función, si fuéramos a mostrar en consola el resultado sería `None`.
 (Más información sobre las funciones lambda ~> https://docs.python.org/3/reference/expressions.html#lambdas)
