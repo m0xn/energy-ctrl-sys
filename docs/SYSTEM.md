@@ -136,7 +136,7 @@ Ahora que tenemos las funciones que va a integrar nuestro bucle de escucha, pode
 En este caso, la función que va a ejecutar el `Timer` se llama `listener()` y acepta un como parámetro una referencia de la clase `Timer` (*Esto puede ser útil para detener un proceso definido como periódico, tras un número concreto de iteraciones*).
 
 Una vez tenemos la función, definimos el `Timer` encargado de ejecutar dicho proceso cada cierto tiempo de forma periódica. En este caso, tiene el nombre de `listener_handler`.
-Para poder definir una instancia de la clase `Timer`, primero debemos asignarle un número de identificación o ID (En el caso de la placa ESP32 contamos con 4 timers cuyos IDs van del 0 al 3).
+Para poder definir una instancia de la clase `Timer`, primero debemos asignarle un número de identificación o ID (*En el caso de la placa ESP32 contamos con 4 timers cuyos IDs van del 0 al 3*).
 Después, utilizando la función `init()` de la clase `Timer`, modficaremos las características del Timer a nuestras necesidades.
 
 Para el tipo de bucle que queremos construir, dado que el Timer ejecuta la función *callback* de forma periódica por defecto, sólamente tendremos que especificar cada cuanto queremos que se ejecute nuestro *callback*. Esto lo hacemos pasándole en esta ocasión el número `500` al argumento `period`. La unidad de medida del periodo está en `ms`.
