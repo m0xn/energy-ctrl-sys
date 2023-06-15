@@ -121,7 +121,7 @@ Y la segunda función por su sencillez está definida en una sóla línea. Las f
 
 En esta función, cambiamos el valor de salida de los ventiladores a través de una condición.
 Esta condición puede devolver dos valores *booleanos*: `True` o `False`.
-Puesto que la función `value()` de la clase Pin acepta valores booleanos como parámetro, podemos utilizar el valor de retorno de esa condición para encender o apagar los ventiladores comparando la temperatura de la habitación con la máxima temperatura permitida (`MAX_TEMP`).
+Puesto que la función `value()` de la clase Pin acepta valores booleanos como parámetro (referencia en la documentación ~> https://docs.micropython.org/en/latest/library/machine.Pin.html?highlight=pin#machine.Pin), podemos utilizar el valor de retorno de esa condición para encender o apagar los ventiladores comparando la temperatura de la habitación con la máxima temperatura permitida (`MAX_TEMP`).
 Sin embargo, debemos tener en cuenta que los relés del módulo que estamos utilizando se activan por **baja**, por lo que tenemos que invetir el resultado con `not` para obtener el comportamiento correcto.
 
 *Al definir las funciones por separado hacemos el código un poco más legible para un tercero.*
