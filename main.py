@@ -19,6 +19,7 @@ MAX_TEMP = 28
 
 def update_oled():
     # oled.text(f'POWER: {sct013.values[0]}W', 0, 0)
+
     oled.text(f'TEMP: {bme280.values[TEMP_IDX]}C', 0, 9)
     oled.text(f'MIN: {MIN_TEMP}C', 0, 18)
     oled.text(f'MAX: {MAX_TEMP}C', 0, 27)
