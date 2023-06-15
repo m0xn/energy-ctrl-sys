@@ -91,7 +91,7 @@ ampy
 
 - En nuestro caso, como nos intersa escribir archivos dentro de la placa, tenemos que especificar los siguientes parámetros:
 
-    - `-p`: hace referencia al puerto serial por el que nos comunicamos con la ESP32. En el caso de Windows es `COM(N)` siendo N: 1,2,3,4... (*Podéis mirarlo en Thonny en la esquina inferior derecha). En el caso de Linux, el puerto serial es un directorio dentro de `dev` llamado ttyUSB0 (`/dev/ttyUSB0`). 
+    - `-p`: hace referencia al puerto serial por el que nos comunicamos con la ESP32. En el caso de Windows es `COM(N)` siendo N: 1,2,3,4... (*Podéis mirarlo en Thonny en la esquina inferior derecha*). En el caso de Linux, el puerto serial es un directorio dentro de `dev` llamado ttyUSB0 (`/dev/ttyUSB0`). 
     - `-b`: hace referencia a la tasa de *baud*. Este valor en la ESP32 es de **115200**.
 
 (*El resto de parámetros no son tan relevantes*)
