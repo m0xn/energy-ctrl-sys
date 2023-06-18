@@ -26,10 +26,10 @@ Los valores con los que estaremos trabajando se mostrarán en la pantalla OLED, 
 
 | Nombre | Imagen | Nombre | Imagen |
 | ------ | ------ | ------ | ------ |
-| Micro-controlador ESP32 | <img src="/docs/images/modules/esp32.jpg" width="200"> | LEDs (rojo x1 y verde x1) | <img src="/images/modules/leds.jpg" width="200"> |
-| BME280 | <img src="/docs/images/modules/bme280.jpg" width="200"> | SCT-013 | <img src="/images/modules/sct-013.jpg" width="200"> |
-| Cables | <img src="/docs/images/modules/cables.jpg" width="200"> | Ventiladores (x2) | <img src="/images/modules/fans.jpg" width="200"> |  
-| Relé doble | <img src="/docs/images/modules/doubleRelay.jpg" width="200"> | panel OLED | <img src="/images/modules/oledPanel.jpeg" width="200">
+| Micro-controlador ESP32 | <img src="/docs/images/modules/esp32.jpg" width="200"> | LEDs (rojo x1 y verde x1) | <img src="/docs/images/modules/leds.jpg" width="200"> |
+| BME280 | <img src="/docs/images/modules/bme280.jpg" width="200"> | SCT-013 | <img src="/docs/images/modules/sct-013.jpg" width="200"> |
+| Cables | <img src="/docs/images/modules/cables.jpg" width="200"> | Ventiladores (x2) | <img src="/docs/images/modules/fans.jpg" width="200"> |  
+| Relé doble | <img src="/docs/images/modules/doubleRelay.jpg" width="200"> | panel OLED | <img src="/docs/images/modules/oledPanel.jpeg" width="200">
 
 ## Scripts
 
