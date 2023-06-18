@@ -6,9 +6,9 @@
 
 - [Introducción](#introducción)
 - [Componentes](#componentes)
-- [Montaje](#montaje)
 - [Scripts](#scripts)
 - [Sistema de control](#sistema-de-control)
+- [Contribuir](#contribuir)
 
 ## Introducción
 
@@ -26,17 +26,10 @@ Los valores con los que estaremos trabajando se mostrarán en la pantalla OLED, 
 
 | Nombre | Imagen | Nombre | Imagen |
 | ------ | ------ | ------ | ------ |
-| Micro-controlador ESP32 | <img src="/images/modules/esp32.jpg" width="200"> | LEDs (rojo x1 y verde x1) | <img src="/images/modules/leds.jpg" width="200"> |
-| BME280 | <img src="/images/modules/bme280.jpg" width="200"> | SCT-013 | <img src="/images/modules/sct-013.jpg" width="200"> |
-| Cables | <img src="/images/modules/cables.jpg" width="200"> | Ventiladores (x2) | <img src="/images/modules/fans.jpg" width="200"> |  
-| Relé doble | <img src="/images/modules/doubleRelay.jpg" width="200"> | panel OLED | <img src="/images/modules/oledPanel.jpeg" width="200">
-
-## Montaje
-
-Aquí está una referencia de cómo debería quedar el **circuito básico**:
-
-![](/images/baseCircuit.jpg)
-
+| Micro-controlador ESP32 | <img src="/docs/images/modules/esp32.jpg" width="200"> | LEDs (rojo x1 y verde x1) | <img src="/images/modules/leds.jpg" width="200"> |
+| BME280 | <img src="/docs/images/modules/bme280.jpg" width="200"> | SCT-013 | <img src="/images/modules/sct-013.jpg" width="200"> |
+| Cables | <img src="/docs/images/modules/cables.jpg" width="200"> | Ventiladores (x2) | <img src="/images/modules/fans.jpg" width="200"> |  
+| Relé doble | <img src="/docs/images/modules/doubleRelay.jpg" width="200"> | panel OLED | <img src="/images/modules/oledPanel.jpeg" width="200">
 
 ## Scripts
 
@@ -57,16 +50,16 @@ Esta es la forma más fácil de escribir un copia del archivo dentro de la placa
 
 - Primero, deberás tener abierto el archivo que quieres guardar dentro de la placa abierto en el editor. Pongamos como ejemplo el archivo `main.py` del repositorio:
 
-<img src='/images/thonny/screenshot1.png' width="900">
+<img src='/docs/images/thonny/screenshot1.png' width="900">
 
 - Después, puedes dirigirte a `Fichero > Guardar` o `Fichero > Guardar como` (Si el archivo ya existe en el sistema). También puedes utilizar los atajos de teclado respectivos: `Ctrl+S`, 'Guardar'; `Ctrl+Shift+S`, 'Guardar como'.
 Si es la primera vez que estas escribiendo el archivo en tu sistema, o si le das a 'Guardar como', te aparecerá la siguiente ventana emergente:
 
-<img src='/images/thonny/screenshot2.png' width="900">
+<img src='/docs/images/thonny/screenshot2.png' width="900">
 
 - En vez de guardarlo en tu equipo, lo guardarás en tu placa ESP32 haciendo click en el botón con el texto '**Dispositivo MicroPython**'.
 
-<img src='/images/thonny/screenshot3.png' width="900">
+<img src='/docs/images/thonny/screenshot3.png' width="900">
 
 - Para finalizar, escribes el nombre con el que quieras guardar el archivo y una vez le des a **Ok** tendrás el archivo escrito dentro de la memoria de la placa. 
 
@@ -118,3 +111,8 @@ Hay que tener muy en cuenta que en este proceso NO puede haber una instancia de 
 ## Sistema de control
 
 Puedes ver cómo funciona el sistema de control programdo en el archivo `main.py` en ~> [Sistema de control](/docs/SYSTEM.md)
+
+
+## Contribuir
+
+Para obtener más información sobre cómo contribuir con el proyecto, puedes dirigirte al archivo `CONTRIBUTING.md` ~> [Contribuir](/docs/CONTRIBUTING.md)
