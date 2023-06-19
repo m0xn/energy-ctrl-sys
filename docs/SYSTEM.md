@@ -151,5 +151,5 @@ Por último, le pasamos al argumento `callback` el nombre de nuestra función `l
 ##### Instalando el script dentro de la placa
 
 Para que el código se ejecute de forma nativa desde la placa, tendremos que guardar el archivo `main.py` dentro de la placa. Bien haciendo uso de Thonny o de una librería externa de Python para realizar dicha acción.
-Explicación de cómo hacerlo aquí ~> [Instalando scripts en la placa](/../README.md#scripts)
+Explicación de cómo hacerlo aquí ~> [Instalando scripts en la placa](../README.md#scripts)
 
