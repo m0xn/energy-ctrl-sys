@@ -148,4 +148,8 @@ Después, utilizando la función `init()` de la clase `Timer`, modficaremos las 
 Para el tipo de bucle que queremos construir, dado que el Timer ejecuta la función *callback* de forma periódica por defecto, sólamente tendremos que especificar cada cuanto queremos que se ejecute nuestro *callback*. Esto lo hacemos pasándole en esta ocasión el número `500` al argumento `period`. La unidad de medida del periodo está en `ms`.
 Por último, le pasamos al argumento `callback` el nombre de nuestra función `listener()`.
 
-Ese es el funcionamiento básico del sistema.
+##### Instalando el script dentro de la placa
+
+Para que el código se ejecute de forma nativa desde la placa, tendremos que guardar el archivo `main.py` dentro de la placa. Bien haciendo uso de Thonny o de una librería externa de Python para realizar dicha acción.
+Explicación de cómo hacerlo aquí ~> [Instalando scripts en la placa](/../README.md#scripts)
+
